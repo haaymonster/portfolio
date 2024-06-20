@@ -2,11 +2,16 @@ import Link from "next/link";
 import React from "react";
 import { FaGithub, FaBlogger } from "react-icons/fa";
 
+interface Props {
+  containerStyles: string;
+  iconStyles: string;
+}
+
 const social = [
   { icons: <FaGithub />, path: "https://github.com/haaymonster" },
   { icons: <FaBlogger />, path: "https://hayli.tistory.com" },
 ];
-const Socials = ({ containerStyles, iconStyles }) => {
+const Socials: React.FC<Props> = ({ containerStyles, iconStyles }) => {
   return (
     <div className={containerStyles}>
       {social.map((item, index) => {

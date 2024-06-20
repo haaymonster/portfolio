@@ -16,13 +16,13 @@ const Photo = () => {
         className="mix-blend-lighten"
       >
         <div className="absolute w-[200px] h-[200px] xl:w-[406px] xl:h-[406px] flex items-center justify-center">
-          <Image
+          {/* <Image
             src={Kitty}
             alt=""
             priority
             quality={100}
             className="w-[186px] h-[186px] xl:w-[390px] xl:h-[390px] rounded-full "
-          />
+          /> */}
         </div>
         <motion.svg
           className="w-[200px] h-[200px] xl:w-[406px] xl:h-[406px]"
@@ -34,7 +34,7 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="250"
-            stroke="#00ff99"
+            stroke="#F19ED2"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"

@@ -17,39 +17,49 @@ import ProjectSlideButton from "@/components/ProjectSlideButton";
 const projects = [
   {
     num: "01",
-    category: "frontend",
+    category: "Quick Mart (RN App)",
     title: "project 1",
     description: "this is a web application",
     stack: [{ name: "html5" }, { name: "Css3" }, { name: "React" }],
-    image: "/assets/work/thumb1.png",
+    image: "/assets/work/rn-ecommerce.gif",
     live: "",
-    github: "",
+    github: "https://github.com/haaymonster/Ecommerce-RN",
   },
   {
     num: "02",
-    category: "frontend",
+    category: "uChoice pro (operation system)",
     title: "project 2",
     description: "this is a web application",
     stack: [{ name: "html5" }, { name: "Css3" }, { name: "React" }],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/uchoice-ops.jpg",
     live: "",
     github: "",
   },
   {
     num: "03",
-    category: "frontend",
+    category: "Help U ( webview )",
     title: "project 3",
-    description: "this is a web application",
+    description: "admin account ID : supercoding PW : admin1234",
     stack: [{ name: "html5" }, { name: "Css3" }, { name: "React" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+    image: "/assets/work/helpu.jpg",
+    live: "https://65d55f7c3ca36c37140d9a72--comforting-squirrel-d9b911.netlify.app",
+    github: "https://github.com/orgs/CareServiceProject/repositories",
+  },
+  {
+    num: "04",
+    category: "Elemental Sky ( website )",
+    title: "project 4",
+    description: "",
+    stack: [{ name: "html5" }, { name: "Css3" }, { name: "React" }],
+    image: "/assets/work/elementalsky.png",
+    live: "https://weather-vibe.vercel.app",
+    github: "https://github.com/haaymonster/weather-vibe",
   },
 ];
 
 const Project = () => {
   const [project, setProject] = useState(projects[0]);
-  const handleSlideChange = (swiper) => {
+  const handleSlideChange = (swiper: any) => {
     const currentIndex = swiper.activeIndex;
     setProject(projects[currentIndex]);
   };
@@ -70,7 +80,7 @@ const Project = () => {
               {project.num}
             </div>
             <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-              {project.category} project
+              {project.category}
             </h2>
             <p className="text-white/60">{project.description}</p>
             <ul className="flex gap-4">
@@ -87,31 +97,44 @@ const Project = () => {
             {/* button */}
             <div className="flex gap-4">
               {/* live */}
-              <Link href={project.live}>
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                      <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Live Project</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </Link>
+              {project.live && (
+                <Link
+                  href={project.live}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Live Project</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
+              )}
+
               {/* github */}
-              <Link href={project.github}>
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                      <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Github Repository</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </Link>
+              {project.github && (
+                <Link
+                  href={project.github}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Github Repository</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
+              )}
             </div>
           </div>
           {/* slider */}
@@ -125,8 +148,7 @@ const Project = () => {
               {projects.map((item, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center ">
-                      <div></div>
+                    <div className="bg-pink-200/50 h-[460px] relative group flex justify-center items-center ">
                       <Image
                         src={item.image}
                         alt=""
