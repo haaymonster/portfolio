@@ -19,18 +19,25 @@ const projects = [
     num: "01",
     category: "Quick Mart (RN App)",
     title: "project 1",
-    description: "this is a web application",
-    stack: [{ name: "html5" }, { name: "Css3" }, { name: "React" }],
+    description:
+      "React Native로 만든 이커머스 모바일 어플리케이션입니다. 상품 리스트, 상품 상세페이지, 카트, 좋아요, 구매하기 등 다양한 기능이 포함되어 있습니다. 개인 프로젝트입니다.",
+    stack: [
+      { name: "React Native" },
+      { name: "Redux Toolkit" },
+      { name: "Expo" },
+      { name: "TailwindCss" },
+    ],
     image: "/assets/work/rn-ecommerce.gif",
     live: "",
     github: "https://github.com/haaymonster/Ecommerce-RN",
   },
   {
     num: "02",
-    category: "uChoice pro (operation system)",
+    category: "uChoice pro (admin system)",
     title: "project 2",
-    description: "this is a web application",
-    stack: [{ name: "html5" }, { name: "Css3" }, { name: "React" }],
+    description:
+      "회사에서 프론트엔드 팀원 3명이 같이 구현한  admin 시스템입니다. Ant Design 컴포넌트 라이브러리를 사용했고 테이블, 필터링, 폼, 모달 등 기능이 있습니다.  ",
+    stack: [{ name: "Ant Design" }, { name: "React" }, { name: "Axios" }],
     image: "/assets/work/uchoice-ops.jpg",
     live: "",
     github: "",
@@ -39,8 +46,15 @@ const projects = [
     num: "03",
     category: "Help U ( webview )",
     title: "project 3",
-    description: "admin account ID : supercoding PW : admin1234",
-    stack: [{ name: "html5" }, { name: "Css3" }, { name: "React" }],
+    description:
+      "부트캠프에서 프론트엔드 팀원 4명, 백엔드 3명이 같이 구현한 도움 서비스입니다. 신청인, 메이트, admin 3가지 롤로 나누었고 서비스 신청, 신청 현황, 신청 기록, 채팅, 유저관리 등 기능이 포함되어 있습니다. admin으로 로그인가능 -> id:supercoding, pw:admin1234",
+    stack: [
+      { name: "StompJs" },
+      { name: "Ionic" },
+      { name: "React" },
+      { name: "Axios" },
+      { name: "TypeScript" },
+    ],
     image: "/assets/work/helpu.jpg",
     live: "https://65d55f7c3ca36c37140d9a72--comforting-squirrel-d9b911.netlify.app",
     github: "https://github.com/orgs/CareServiceProject/repositories",
@@ -49,11 +63,28 @@ const projects = [
     num: "04",
     category: "Elemental Sky ( website )",
     title: "project 4",
-    description: "",
-    stack: [{ name: "html5" }, { name: "Css3" }, { name: "React" }],
-    image: "/assets/work/elementalsky.png",
+    description:
+      "2명이 같이 만든 음악 플레이 웹사이트입니다. 날씨 검색, 뮤직 플레이 기능이 있습니다.",
+    stack: [{ name: "React" }, { name: "Next Js" }, { name: "Tailwind Css" }],
+    image: "/assets/work/weathervibe.png",
     live: "https://weather-vibe.vercel.app",
     github: "https://github.com/haaymonster/weather-vibe",
+  },
+  {
+    num: "05",
+    category: "Youpik (RN App)",
+    title: "project 5",
+    description:
+      "회사에서 팀원 3명이랑 같이 계속 유지보수를 해온 모바일 이커머스 플랫폼입니다. ",
+    stack: [
+      { name: "React Native" },
+      { name: "Redux" },
+      { name: "Type Script" },
+      { name: "i18n" },
+    ],
+    image: "/assets/work/youpik2.jpg",
+    live: "",
+    github: "",
   },
 ];
 
@@ -83,7 +114,7 @@ const Project = () => {
               {project.category}
             </h2>
             <p className="text-white/60">{project.description}</p>
-            <ul className="flex gap-4">
+            <ul className="flex gap-4 flex-wrap">
               {project.stack.map((item, index) => {
                 return (
                   <li key={index} className="text-xl text-accent">
@@ -148,7 +179,7 @@ const Project = () => {
               {projects.map((item, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="bg-pink-200/50 h-[460px] relative group flex justify-center items-center ">
+                    <div className=" h-[460px] relative group flex justify-center items-center ">
                       <Image
                         src={item.image}
                         alt=""

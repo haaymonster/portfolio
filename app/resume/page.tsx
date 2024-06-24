@@ -21,17 +21,17 @@ import { motion } from "framer-motion";
 //  experience data
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "my experience",
+  title: "My Experience",
   description: "",
   items: [
     {
       company: "E-commerce Startup",
-      position: "front-end developer",
+      position: "프론트엔드 개발자",
       duration: "2022.11 ~ 2023.10",
     },
     {
       company: "E-commerce Startup",
-      position: "QA Engineer",
+      position: "QA 엔지니어",
       duration: "2021.07 ~ 2022.11",
     },
   ],
@@ -40,12 +40,12 @@ const experience = {
 //  education data
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "my education",
+  title: "My Education",
   description: "",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "web development bootcamp",
+      institution: "온라인 부트캠프",
+      degree: "프론트엔드 과정",
       duration: "2023.11 ~ 2024.03",
     },
     {
@@ -58,7 +58,7 @@ const education = {
 
 // skills data
 const skill = {
-  title: "my skills",
+  title: "My Skills",
   description: "",
   skillList: [
     { icon: <FaHtml5 />, name: "html 5" },
@@ -108,7 +108,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-between  items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -127,7 +127,7 @@ const Resume = () => {
             </TabsContent>
             {/* education */}
             <TabsContent value="education" className="w-full h-full">
-              <div className="flex flex-col text-center xl:text-left gap-[30px] ">
+              <div className="flex flex-col text-center xl:text-left gap-[30px]">
                 <h2 className="h2">{education.title}</h2>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {education.description}
@@ -138,7 +138,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-between items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px]  text-center lg:text-left">
@@ -171,8 +171,8 @@ const Resume = () => {
                           <li key={index}>
                             <TooltipProvider delayDuration={100}>
                               <Tooltip>
-                                <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex items-center justify-center group">
-                                  <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                <TooltipTrigger className="w-full h-[100px] bg-[#232329] rounded-xl flex items-center justify-center group">
+                                  <div className="text-4xl group-hover:text-accent transition-all duration-300">
                                     {item.icon}
                                   </div>
                                 </TooltipTrigger>

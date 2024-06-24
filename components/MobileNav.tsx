@@ -1,14 +1,18 @@
 "use client";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
 
 const links = [
-  { name: "home", path: "/" },
-  { name: "technique", path: "/technique" },
-  { name: "resume", path: "/resume" },
-  { name: "project", path: "/project" },
+  { name: "Home", path: "/" },
+  { name: "Resume", path: "/resume" },
+  { name: "Project", path: "/project" },
 ];
 
 const MobileNav = () => {
@@ -35,7 +39,7 @@ const MobileNav = () => {
                   "text-accent border-b-2 border-accent"
                 } hover:text-accent  text-xl capitalize font-medium transition-all`}
               >
-                {link.name}
+                <SheetClose>{link.name}</SheetClose>
               </Link>
             );
           })}

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Kitty from "../public/assets/hikitty.jpeg";
+import Profile from "../public/assets/profile.jpg";
 
 const Photo = () => {
   return (
@@ -15,17 +15,17 @@ const Photo = () => {
         }}
         className="mix-blend-lighten"
       >
-        <div className="absolute w-[200px] h-[200px] xl:w-[406px] xl:h-[406px] flex items-center justify-center">
-          {/* <Image
-            src={Kitty}
+        <div className="absolute w-[200px] h-[200px] xl:w-[380px] xl:h-[380px] flex items-center justify-center">
+          <Image
+            src={Profile}
             alt=""
             priority
             quality={100}
-            className="w-[186px] h-[186px] xl:w-[390px] xl:h-[390px] rounded-full "
-          /> */}
+            className="w-[186px] h-[186px] xl:w-[350px] xl:h-[350px] rounded-full "
+          />
         </div>
         <motion.svg
-          className="w-[200px] h-[200px] xl:w-[406px] xl:h-[406px]"
+          className="w-[200px] h-[200px] xl:w-[380px] xl:h-[380px]"
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="www.w3.org/2000/svg"
